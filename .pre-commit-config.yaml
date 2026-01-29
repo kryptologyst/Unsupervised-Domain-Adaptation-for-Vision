@@ -1,0 +1,20 @@
+"""Pre-commit configuration for code quality."""
+
+repos:
+  - repo: https://github.com/psf/black
+    rev: 23.7.0
+    hooks:
+      - id: black
+        language_version: python3.10
+
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.280
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.5.1
+    hooks:
+      - id: mypy
+        additional_dependencies: [types-PyYAML]

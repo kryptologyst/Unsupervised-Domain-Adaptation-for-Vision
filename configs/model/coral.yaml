@@ -1,0 +1,9 @@
+# @package model
+
+_target_: src.models.CORALModel
+
+num_classes: 10
+backbone: "resnet50"
+pretrained: true
+freeze_backbone: false
+dropout: 0.5
